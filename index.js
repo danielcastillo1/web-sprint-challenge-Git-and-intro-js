@@ -351,11 +351,13 @@ Use artistByCountry to do the following:
 */
 
 function artistByCountry(array, string) {
+  let newArr = [];
   for (let i = 0; i < array.length; i++) {
-    if (array[i].bio === string) {
-      return array[i].name
+    if (array[i].nationality < 2 || array[i].nationality === string) {
+       newArr.push(array[i].name)
     }
   }
+  return newArr;
 }
 
 
