@@ -247,10 +247,10 @@ Use listOfNames to do the following:
 function listOfNames(array) {
   let arrCopy = [...array];
   let newArr = []
-for(let i = 0; i < arrCopy.length; i++){
-newArr.push(arrCopy[i].name)
-}
-return newArr
+  for (let i = 0; i < arrCopy.length; i++) {
+    newArr.push(arrCopy[i].name)
+  }
+  return newArr
 }
 
 console.log("task 4", listOfNames(artists))
@@ -266,15 +266,12 @@ Use removeArtist to do the following:
 
 function removeArtist(array, number) {
   let arrCopy = [...array];
-  for(let i = 0; i < arrCopy.length; i++){
-    if(arrCopy[i] === number){
-      arrCopy.splice(i, 1);
-    }
-  }
+  arrCopy.splice(arrCopy[number], 1);
+
   return arrCopy;
 }
 
-//console.log(removeArtist(artists, 0));
+console.log("task 5", removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -294,7 +291,7 @@ Use addArtist to do the following:
 
 function addArtist(array, name, years, genre, nationality, bio) {
   let arrCopy = [...array];
-  arrCopy.push({name, years, genre, nationality, bio });
+  arrCopy.push({ name, years, genre, nationality, bio });
   console.log("artists", arrCopy);
   return arrCopy
 }
@@ -310,13 +307,17 @@ Use lotsOfArt to do the following:
 */
 
 function lotsOfArt(array) {
+   //let paint =  array.filter(painting => painting.paintings > 100)
+   let newArr = [];
   for(let i = 0; i < array.length; i++){
-    if(array[i].includes){
-
+    if(array[i].paintings > 100){
+      newArr.push(array[i].name);
     }
   }
+  return newArr;
 }
 
+console.log("lots of art", lotsOfArt(artists))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -329,11 +330,15 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistInfo(array, string) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name === string) {
+      return array[i].bio
+    }
+  }
 }
 
-
+console.log(artistInfo(artists, "Frida Kahlo"))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
@@ -345,7 +350,7 @@ Use artistByCountry to do the following:
 🌟 EXAMPLE: Invoking artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
+function artistByCountry(/*Your Code Here*/) {
   /*Your Code Here*/
 }
 
